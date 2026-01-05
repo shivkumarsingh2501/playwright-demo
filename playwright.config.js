@@ -1,5 +1,46 @@
 import { defineConfig, devices } from '@playwright/test';
 
+
+export default defineConfig({
+  // 4) Where your tests live
+  testDir: './tests',
+
+  // 5) Timeouts
+  // Global timeout for each test
+  timeout: 40 * 1000,
+  // Assertion timeout
+  expect: {
+    timeout: 40000,
+  },
+
+  // 6) Shared settings for all tests
+  use: {
+    // Browser choice: 'chromium' | 'firefox' | 'webkit'
+    browserName: 'webkit',
+    headless: false,
+    
+    // Headless mode (default is true). Use CLI --headed to run headed.
+    //headless: true,
+
+    /* Base URL to use in actions like `await page.goto('')`. */
+    // baseURL: 'http://localhost:3000',
+  },
+
+  // 12) Reporter configuration — simple HTML report for beginners
+  reporter: 'html',
+
+  /* Configure projects for major browsers (kept commented for simplicity)
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+  ],
+  */
+});
+
+ // To avoid "no exports" error in some environments
+
+
 /**
  * Playwright Configuration — Beginner Notes
  *
@@ -60,34 +101,3 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See: https://playwright.dev/docs/test-configuration
  */
-export default defineConfig({
-  // 4) Where your tests live
-  testDir: './tests',
-
-  // 5) Timeouts
-  // Global timeout for each test
-  timeout: 40000,
-  // Assertion timeout
-  expect: {
-    timeout: 40000,
-  },
-
-  // 6) Shared settings for all tests
-  use: {
-    // Browser choice: 'chromium' | 'firefox' | 'webkit'
-    browserName: 'chromium',
-    /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
-  },
-
-  // 12) Reporter configuration — simple HTML report for beginners
-  reporter: 'html',
-
-  /* Configure projects for major browsers (kept commented for simplicity)
-  projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
-    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
-  ],
-  */
-});

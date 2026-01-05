@@ -1,7 +1,21 @@
-const {test} = require('@playwright/test');
+import { test } from '@playwright/test';
 
-test('example test', async ({ browser }) => {
-  // browser is available here
+test('Browser , page context example', async ({ browser,page }) => {
+//   const context = await browser.newContext();
+//   const page = await context.newPage();
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+});
+
+
+test('Browser context example', async ({ browser }) => {
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto('https://google.com');
+});
+
+test.only('page context example', async ({ page }) => {
+  
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
 });
  
 

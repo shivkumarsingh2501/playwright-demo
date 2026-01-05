@@ -1,12 +1,4 @@
-const {test} = require('@playwright/test');
 
-
-test('My first UI test', async () => {
-  // automation steps go here
-});
-
-
-/*
 Explanation
 -----------
 
@@ -74,5 +66,3 @@ Explanation
 - Always use `async` + `await` for Playwright steps.
 - Prefer arrow functions for clearer, shorter tests.
 - Keep each `test()` isolated to ensure independent execution.
-
-*/
