@@ -1,39 +1,40 @@
-import { test } from '@playwright/test';
-
-import { expect } from '@playwright/test';
 
 
-test('Brower context example with locators', async ({ browser }) => {
+import { test, expect } from '@playwright/test';
+
+test('page context example', async ({page }) => {
+  
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+
+  // get title of the page
+  console.log('Page title:', await page.title());
+   // Use await with expect to ensure Playwright waits for the condition
+  await expect(page).toHaveTitle('OrangeHRM');
+  
+  // get url of the page
+  console.log('Page url:', page.url());
+  await expect(page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  
+
+ 
+});
+
+test('Browser context example for google', async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
-  await page.goto('https://opensource-demo.orange
-    hrmlive.com/web/index.php/auth/login');
+  await page.goto('https://google.com');
+  console.log('Google Page title:', await page.title());
+  await expect(page).toHaveTitle("Google");
 
-)};
+});
+
+
 /*
 
 📘 Playwright Lecture 12
 Locators Supported by Playwright & Typing into Elements
 1️⃣ Timeout Recap (Context for This Lecture)
 🔹 Global Test Timeout
-
-test('Invalid login shows an error message (lecture example)', async ({ page }) => {
-  await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
-
-  // Fill username and password using recommended `.fill()`
-  await page.locator('#username').fill('Rahul Shetty');
-  await page.locator('[type="password"]').fill('learning');
-
-  // Click sign in
-  await page.locator('#signInBtn').click();
-
-  // Locate common error containers; use :is() to match one of several possible selectors
-  const error = page.locator(':is(.alert-danger, .error, #msg)');
-
-  // Assert error becomes visible and contains expected text
-  await expect(error).toBeVisible({ timeout: 5000 });
-  await expect(error).toContainText(/incorrect|invalid|failed|username/i);
-});
 
 Default: 30 seconds
 
