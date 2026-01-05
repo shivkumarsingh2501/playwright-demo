@@ -1,4 +1,4 @@
-// Handle Multiple locators and login validation
+
 
 
 import { expect, test } from '@playwright/test';
@@ -13,19 +13,20 @@ test('Valid login test', async ({ page }) => {
 
   await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
   console.log( await page.title());
-  await userName.fill('rahulshettyacademy');
+  await userName.fill('rahulshetty');
   await password.fill('learning');
   await selectOption.selectOption('Teacher');
   await signInBtn.click();
-   //  type - fill
-  await page.locator(".card-body").nth(1).textContent().then(async text=>{
-    console.log(text);
-
-  });
-  await page.locator(".card-body").first().textContent().then(async text=>{
-
+  await page.locator("[style*='block']").textContent().then(async text=>{
     console.log(text);
   });
+  console.log("Error Validation" + await page.locator("[style*='block']").textContent());
+  await expect(page.locator("[style*='block']")).toContainText('Incorrect username/password.');
+
+ 
+
+  await page.waitForTimeout(10000);
+
 
 
 });
