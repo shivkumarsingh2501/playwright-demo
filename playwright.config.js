@@ -16,7 +16,7 @@ export default defineConfig({
   // 6) Shared settings for all tests
   use: {
     // Browser choice: 'chromium' | 'firefox' | 'webkit'
-    browserName: 'webkit',
+    browserName: 'chromium',
     headless: false,
     
     // Headless mode (default is true). Use CLI --headed to run headed.
