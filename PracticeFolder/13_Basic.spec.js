@@ -9,7 +9,19 @@ test.only('UI Controls - Checkboxes, Radio Buttons, Static Dropdowns', async ({ 
   await page.locator('.radiotextsty').nth(1).click();
   await page.locator("#okayBtn").click();
   await page.pause();
+  console.log( await page.locator('.radiotextsty').last().isChecked());
   expect(page.locator('.radiotextsty').nth(1)).toBeChecked();
+  await page.locator('#terms').check();
+  await expect(page.locator('#terms')).toBeChecked();
+  await page.locator('#terms').uncheck();
+  expect(page.locator('#terms').isChecked()).tobeFalsy();
+
+   
+
+
+    
+  
+
 
   
 
