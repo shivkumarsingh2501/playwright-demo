@@ -36,7 +36,18 @@ export default defineConfig({
     { name: 'webkit', use: { ...devices['Desktop Safari'] } },
   ],
   */
+
+
+  "editor.quickSuggestions": 
+  {
+  "other": false,
+  "comments": false,
+  "strings": false
+  }
+
 });
+
+
 
  // To avoid "no exports" error in some environments
 
