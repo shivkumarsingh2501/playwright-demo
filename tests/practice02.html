@@ -1,0 +1,41 @@
+
+<script>
+ function fun1(){
+    alert("called")
+    var con = document.querySelector("#t1")
+    alert(con.value);
+    var con1 = document.querySelector(".abc")
+    alert(con1.innerText)
+    var divElement=document.querySelector("div")
+    console.log(divElement)
+    var allDivs = doucment.getElemntsByTagName("div");
+    console.log(allDivs);
+    for(var i= 0 ; i <allDivs.lenght-1; i++){
+        console.log(allDivs[i].innerText)
+    }
+
+
+
+
+ }
+</script>
+
+
+<body>
+
+    <input type = "text" id = "t1"/>
+    <input type = "button" value = "click" onclick = "fun1()"/>
+    <div class = "abc">Welcome</div>
+
+</body>
+<style>
+    #t1{
+        color:blue;
+        font-weight:bold;
+        
+    }
+    .abc{
+        color:green;
+        font-size :30px
+    }
+</style>
