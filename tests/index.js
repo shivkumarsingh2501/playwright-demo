@@ -490,8 +490,175 @@ transactions:
 // console.log(y); // ❌ ReferenceError
 // let y = 20;
 
-sayHi();
+// sayHi();
 
-function sayHi() {
-  console.log("Hello");
+// function sayHi() {
+//   console.log("Hello");
+// }
+
+
+// let arr = [10 ,20 ,30, 40 , 10 ,20 ,30 ,40]
+// // let obj = {}
+// // for(x of arr){
+// //   obj[x] = 1;
+// //   //console.log(obj)
+// //   //console.log(Object.keys(obj))
+
+// // }
+// let unique= [...new Set(arr)]
+// console.log(unique)
+// // 
+
+// var obj = [{ uname:"scott", city : "Hyd"} ,{uname: "SHIV", city : "Chennai"}]
+// //console.log(obj)
+// // key must be unique 
+// // duplicate keys overwritge and store single entity 
+
+// // Array of object : each object is seperate , no overwirte , store multiple records 
+// console.log(Object.entries(obj[1]))
+// uname : shiv
+// wife : mayuri
+// child : 
+//   son : s1 , s2 
+//   daughter : d1
+//   let obj = {
+//     uname : "shiv",
+//     wife : "mayuri",
+//     child : {
+//       son :["s1","s2"],
+//       daughter : ["d1", "d2"]
+//     }
+//   };
+// console.log(obj.child.son[1])
+
+// Delhi : programer - p1 , p2 , hr - hr 1 , hr 2
+// Chennai : programer - p1 , p2 , hr - hr 1 , hr 2
+
+// let company ={
+//   hyd : {
+//     prg :["p1", "p2"],
+//     hr : ["hr1", "hr2"]
+//   },
+//   chennai: {
+//     programer :["p1", "p2"],
+//     hr : ["ch1", "ch2"]
+//   }
+// };
+// console.log(company)
+// console.log(company.hyd.prg)
+// console.log(company.chennai.hr)
+
+
+// Naming conventinong of objects and key
+
+// in javascript object proties names are always in string
+// let obj = {"name of user" : "shiv"}
+// console.log(obj["name of user"])
+// let obj2 = {123 : "shiv"}
+// console.log(obj2)
+// javascript convert number key into string 
+// if key is with sapace then we need to make it in quotes
+
+// function is a set of executable statements to perfomr a specific task 
+// Function : a function is a block of resuable code that perform a specific task
+// predefined function ( buitl in function )
+
+// Object.entries()
+// Array.push()
+// console.log()
+
+// 2 User -defined function  : these function are created by developer
+
+// function add(a,b){
+//    return a+b
+// }
+// console.log(add(4,5))
+
+// function fun(){
+//   console.log("form funcito")
+// }
+//aNONYMOUS FUNCTION : If we create a function without anyname than it comes under anonymous function
+
+
+// function sayHello() {
+//   console.log("Hello1");
+// }
+// sayHello()
+
+
+// const sayHello2 = function() {
+//   console.log("Hello2");
+// };
+// sayHello2()
+
+// call back function : function passed as an argument to another funciton 
+// function add(callback){
+//    console.log("adding 2 numbers")
+//    callback()
+// }
+
+// function print(){
+//   console.log("printing 2 number")
+  
+// }
+// add(print);
+// Neted fucntion 
+
+// it is a concept of function decalration insde another fucntin
+// function fun1(){
+//     function fun2(){
+//       console.log("fn2")
+//     }
+//     fun2()
+// };
+// fun1();
+
+// Arrow function ( Moder way) : Shor syntax function 
+
+// function fun2(){
+//   pass 
+// }
+
+// var fn1 = () => {
+//   console.log("this is an arrow function")
+// }
+// fn1()
+
+// function add(a,b){
+//   return a+b
+// }
+
+// const add = (a,b) => a+b;
+
+
+// let ar = [1,2,3]
+// // [2,4,6]
+// let result = ar.map(num => num * 2);
+// console.log(result)
+
+// conversion function : these function we cna convert the input data form one format to another format
+// var x = "10abc"
+// var y = "200"
+// console.log(x+y)
+// console.log(parseInt(x) +parseInt(y));
+
+// parseInt() : it convert input data as number 
+// parseFloat() : it convert input value as float value
+
+// var x = " 100.24"
+// var y =  "100"
+// console.log(parseInt(x) +parseInt(y));
+// console.log(parseFloat(x) +parseFloat(y));
+
+// eval() : using this function we can eavaluate a string as arthemation expression
+//
+
+// BOM  -- Browser object model : 
+// window : it is root object of browser provides many properties and methods
+
+// alert() : using this we can display a message on a browser 
+function generateEmail() {
+    const timestamp = Date.now();
+    return `user${timestamp}@mailinator.com`;
 }
+console.log(generateEmail())
